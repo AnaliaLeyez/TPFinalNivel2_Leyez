@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,6 +93,10 @@
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{f99412c6-2f34-4421-951d-50b74287ed2d}</Project>
       <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\helper\helper.csproj">
+      <Project>{a62df3a8-8be6-40d0-aff5-dced80a1ad39}</Project>
+      <Name>helper</Name>
     </ProjectReference>
     <ProjectReference Include="..\negocio\negocio.csproj">
       <Project>{a5bd3472-87c0-4e59-b495-7e07ef38b726}</Project>

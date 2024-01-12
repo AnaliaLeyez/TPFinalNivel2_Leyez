@@ -1,0 +1,6 @@
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\bin\Debug\dominio.dll
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\bin\Debug\dominio.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\obj\Debug\dominio.dll
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\dominio\obj\Debug\dominio.pdb

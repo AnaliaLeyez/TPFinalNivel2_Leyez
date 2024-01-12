@@ -1,0 +1,6 @@
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\bin\Debug\helper.dll
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\bin\Debug\helper.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\obj\Debug\helper.csproj.AssemblyReference.cache
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\obj\Debug\helper.csproj.CoreCompileInputs.cache
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\obj\Debug\helper.dll
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\helper\obj\Debug\helper.pdb

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "negocio\negocio.csproj", "{A5BD3472-87C0-4E59-B495-7E07EF38B726}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helper", "helper\helper.csproj", "{A62DF3A8-8BE6-40D0-AFF5-DCED80A1AD39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A5BD3472-87C0-4E59-B495-7E07EF38B726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5BD3472-87C0-4E59-B495-7E07EF38B726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5BD3472-87C0-4E59-B495-7E07EF38B726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62DF3A8-8BE6-40D0-AFF5-DCED80A1AD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62DF3A8-8BE6-40D0-AFF5-DCED80A1AD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62DF3A8-8BE6-40D0-AFF5-DCED80A1AD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62DF3A8-8BE6-40D0-AFF5-DCED80A1AD39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
