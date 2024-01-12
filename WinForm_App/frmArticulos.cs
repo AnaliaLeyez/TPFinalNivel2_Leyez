@@ -149,9 +149,9 @@ namespace WinForm_App
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             btnEditar.Enabled = true;
-            btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(90)))), ((int)(((byte)(50)))));
+            btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
             btnEliminar.Enabled = true;
-            btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+            btnEliminar.BackColor = System.Drawing.Color.Black;
 
             try
             {
@@ -207,9 +207,9 @@ namespace WinForm_App
             else
             {
                 btnEditar.Enabled = true;
-                btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(90)))), ((int)(((byte)(50)))));
+                btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
                 btnEliminar.Enabled = true;
-                btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
+                btnEliminar.BackColor = System.Drawing.Color.Black;
             }
             ocultarColumnas();
 
@@ -239,5 +239,6 @@ namespace WinForm_App
             else
                 cboxCriterio.Items.Clear();
         }
+
     }
 }
