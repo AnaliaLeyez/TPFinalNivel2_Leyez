@@ -12,13 +12,18 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-        public List<Articulo> listar()
+        //listar activos o listar solo inactivos según si recibe o no un bool:
+        public List<Articulo> listar(bool inactivos = false)
         {
             List<Articulo> listaArt = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, M.Descripcion Marca, A.IdCategoria, C.Descripcion Categoria, A.ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M Where M.Id = A.IdMarca And C.Id = A.IdCategoria");
+                if (inactivos)
+                    datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, M.Descripcion Marca, A.IdCategoria, C.Descripcion Categoria, A.ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M Where M.Id = A.IdMarca And C.Id = A.IdCategoria and A.Precio<0");
+                else
+                    datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, M.Descripcion Marca, A.IdCategoria, C.Descripcion Categoria, A.ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M Where M.Id = A.IdMarca And C.Id = A.IdCategoria and A.Precio>0");
+
                 datos.ejecutarLectura();
                 SqlDataReader lector = datos.Lector;
                 while (lector.Read())
@@ -37,6 +42,8 @@ namespace negocio
                     if (!(lector["ImagenUrl"] is DBNull))
                         aux.Imagen = (string)lector["ImagenUrl"];
                     aux.Precio = Math.Round((decimal)lector["Precio"], 2);
+                    if(aux.Precio < 0)
+                        aux.Precio = -aux.Precio;
 
                     listaArt.Add(aux);
                 }
@@ -49,7 +56,7 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
-            }        
+            }
         }
 
         public void agregar(Articulo nuevo)
@@ -105,7 +112,7 @@ namespace negocio
             }
         }
 
-        public void eliminar(int id)
+        public void elimFisico(int id)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -125,13 +132,31 @@ namespace negocio
             }
         }
 
+        public void activar_desactivar (int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Precio = -Precio Where id=@id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         public List<Articulo> filtrar(string campo, string criterio, string filtro)
         {
             List<Articulo> listaFiltrada = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, M.Descripcion Marca, A.IdCategoria, C.Descripcion Categoria, A.ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M Where M.Id = A.IdMarca And C.Id = A.IdCategoria And ";
+                string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, M.Descripcion Marca, A.IdCategoria, C.Descripcion Categoria, A.ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M Where M.Id = A.IdMarca And C.Id = A.IdCategoria And A.Precio>0 And ";
                 switch (campo)
                 {
                     case "Nombre":
@@ -163,6 +188,7 @@ namespace negocio
                         }
                         break;
                     case "Precio":
+                        filtro = filtro.Replace(',', '.');
                         switch (criterio)
                         {
                             case "Mayor a":
@@ -212,7 +238,7 @@ namespace negocio
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
                     if (!(lector["ImagenUrl"] is DBNull))
                         aux.Imagen = (string)lector["ImagenUrl"];
-                    aux.Precio = (decimal)lector["Precio"];
+                    aux.Precio = Math.Round((decimal)lector["Precio"], 2);                    
 
                     listaFiltrada.Add(aux);
                 }
@@ -224,5 +250,6 @@ namespace negocio
             }
             
         }
+
     }
 }

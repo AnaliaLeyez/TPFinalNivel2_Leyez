@@ -23,7 +23,7 @@ namespace WinForm_App
 
         private void FrmArticulos_Load(object sender, EventArgs e)
         {
-            this.ClientSize = new System.Drawing.Size(685, 545);
+            this.ClientSize = new System.Drawing.Size(805, 545);
             cargarGrilla();
             cboxCampo.Items.Add("Nombre");
             cboxCampo.Items.Add("Marca");
@@ -58,25 +58,9 @@ namespace WinForm_App
             dgvArticulos.Columns["Imagen"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Visible = false;
         }
-
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-
-            if (dgvArticulos.CurrentRow != null)
-            {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.Imagen);
-                lblDescNombre.Text = seleccionado.Nombre;
-                lblDescMarca.Text = seleccionado.Marca.Descripcion;
-                lblDescPrecio.Text = "$" + seleccionado.Precio.ToString("0.00");
-            }
-            else
-            {
-                lblDescNombre.Text = "Sin coincidencias";
-                lblDescMarca.Text = "";
-                lblDescPrecio.Text = "";
-                pboxArticulo.Load("https://faculty.eng.ufl.edu/elliot-douglas/wp-content/uploads/sites/70/2015/11/img-placeholder.png");
-            }
+            validarCeldaSelec();
         }
 
         private void cargarImagen(string imagen)
@@ -114,17 +98,31 @@ namespace WinForm_App
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            opcEliminar();
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            opcEliminar(true);
+        }
+
+        private void opcEliminar(bool logico=false)
+        {
             //Chequeo que haya un item seleccionado:
+
             if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
             {
-                Articulo seleccionado= (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 //Pido confirmacion previo a eliminar:
-                if (confirmarAccion(seleccionado.Codigo))
+                if (confirmarAccion(seleccionado.Codigo, logico))
                 {
                     try
                     {
-                        negocio.eliminar(seleccionado.Id);
+                        if (logico)
+                            negocio.activar_desactivar(seleccionado.Id);
+                        else
+                            negocio.elimFisico(seleccionado.Id);
                         cargarGrilla();
                     }
                     catch (Exception ex)
@@ -132,48 +130,27 @@ namespace WinForm_App
                         MessageBox.Show(ex.ToString());
                     }
                 }
-                
             }
             else
                 MessageBox.Show("Ninguna fila seleccionada");
+            
         }
 
-        private bool confirmarAccion(string cod)
+        private bool confirmarAccion(string cod, bool logico)
         {
-            DialogResult respuesta = MessageBox.Show("¿Seguro que quiere eliminar el registro con Código=" + cod + " de la BD?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(respuesta == DialogResult.Yes)
+            DialogResult respuesta;
+            if (logico)
+                respuesta = MessageBox.Show("¿Seguro que quiere dar de baja el registro con Código=" + cod + " de la BD?", "Desactivando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            else
+                respuesta = MessageBox.Show("¿Seguro que quiere eliminar el registro con Código=" + cod + " de la BD?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
                 return true;
             return false;
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            btnEditar.Enabled = true;
-            btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-            btnEliminar.Enabled = true;
-            btnEliminar.BackColor = System.Drawing.Color.Black;
-
-            try
-            {
-                if (!Validacion.validarFiltro(cboxCampo, cboxCriterio, txtboxFiltroAvanzado))
-                    return;
-                
-                string campo = cboxCampo.SelectedItem.ToString();
-                string criterio = cboxCriterio.SelectedItem.ToString();
-                string filtro = txtboxFiltroAvanzado.Text;
-
-                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
-
-                dgvArticulos.Columns[1].Width = 60;
-                dgvArticulos.Columns[2].Width = 120;
-                dgvArticulos.Columns[4].Width = 100;
-                dgvArticulos.Columns[5].Width = 100;
-                dgvArticulos.Columns[7].Width = 80;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            filtroAv();
         }
 
 
@@ -183,7 +160,7 @@ namespace WinForm_App
             //No inicializo el obj lista antes ya que la Lista se genera en el FindAll
 
             string filtro = txtboxFiltro.Text;
-            if (filtro.Length >= 3)
+            if (filtro.Length >= 2)
                 listaFiltrada = listaArticulo.FindAll(art => art.Nombre.ToUpper().Contains(filtro.ToUpper()) || art.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || art.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()) || art.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             else
                 listaFiltrada = listaArticulo;
@@ -197,20 +174,8 @@ namespace WinForm_App
             dgvArticulos.Columns[5].Width = 100;
             dgvArticulos.Columns[7].Width = 80;
 
-            if (dgvArticulos.CurrentRow == null)
-            {
-                btnEliminar.Enabled = false;
-                btnEliminar.BackColor = Color.Gray;
-                btnEditar.Enabled = false;
-                btnEditar.BackColor = Color.Gray;
-            }
-            else
-            {
-                btnEditar.Enabled = true;
-                btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(180)))), ((int)(((byte)(255)))));
-                btnEliminar.Enabled = true;
-                btnEliminar.BackColor = System.Drawing.Color.Black;
-            }
+            validarCeldaSelec();
+
             ocultarColumnas();
 
 
@@ -240,5 +205,108 @@ namespace WinForm_App
                 cboxCriterio.Items.Clear();
         }
 
+        private void btnReactivar_Click(object sender, EventArgs e)
+        {
+            FrmReactivarArt activacion = new FrmReactivarArt();
+            activacion.ShowDialog();
+            cargarGrilla();
+        }
+
+        private void TsMenuAgregarArticulo_Click(object sender, EventArgs e)
+        {
+            frmCRUD_Articulos alta = new frmCRUD_Articulos();
+            alta.ShowDialog();
+            cargarGrilla();
+        }
+
+        private void TsMenuCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void validarCeldaSelec()
+        {
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.Imagen);
+                lblDescNombre.Text = seleccionado.Nombre;
+                lblDescMarca.Text = seleccionado.Marca.Descripcion;
+                lblDescPrecio.Text = "$" + seleccionado.Precio.ToString("0.00");
+
+                btnEliminar.Enabled = true;
+                btnEliminar.BackColor = System.Drawing.Color.Black;
+                btnBaja.Enabled = true;
+                btnBaja.BackColor = System.Drawing.Color.Black;
+                btnEditar.Enabled = true;
+                btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
+            }
+            else
+            {
+                lblDescNombre.Text = "Sin coincidencias";
+                lblDescMarca.Text = "";
+                lblDescPrecio.Text = "";
+                pboxArticulo.Load("https://faculty.eng.ufl.edu/elliot-douglas/wp-content/uploads/sites/70/2015/11/img-placeholder.png");
+
+                btnEliminar.Enabled = false;
+                btnEliminar.BackColor = Color.Gray;
+                btnBaja.Enabled = false;
+                btnBaja.BackColor = Color.Gray;
+                btnEditar.Enabled = false;
+                btnEditar.BackColor = Color.Gray;
+            }
+        }
+
+        private void TsMenuSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+            txtboxFiltroAvanzado.Text = "";
+        }
+
+
+
+        private void filtroAv()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                if (!Validacion.validarFiltro(cboxCampo, cboxCriterio, txtboxFiltroAvanzado))
+                    return;
+
+                string campo = cboxCampo.SelectedItem.ToString();
+                string criterio = cboxCriterio.SelectedItem.ToString();
+                string filtro = txtboxFiltroAvanzado.Text;
+
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+                dgvArticulos.Columns[1].Width = 60;
+                dgvArticulos.Columns[2].Width = 120;
+                dgvArticulos.Columns[4].Width = 100;
+                dgvArticulos.Columns[5].Width = 100;
+                dgvArticulos.Columns[7].Width = 80;
+                validarCeldaSelec();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtboxFiltroAvanzado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                filtroAv();
+                e.Handled = true; // evita que se genere el sonido de la tecla Enter
+            }
+        }
+
+        
     }
 }

@@ -16,3 +16,5 @@ C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.pdb
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\helper.dll
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\helper.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.frmReactivarArt.resources
+C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.FrmBienvenida.resources

@@ -24,20 +24,26 @@ namespace helper
                     MessageBox.Show("Por favor, seleccione un valor para filtrar");
                     return false;
                 }
-                else if (!(Validacion.soloNumeros(txtboxFiltroAvanzado.Text)))
+                else if (!(Validacion.soloNumDecimal(txtboxFiltroAvanzado.Text)))
                 {
-                    MessageBox.Show("solo nros enteros para filtrar numericamente");
+                    MessageBox.Show("solo nros para filtrar numericamente");
                     return false;
                 }
             }
 
             return true;
         }
-        public static bool soloNumeros(string cadena)
+        public static bool soloNumDecimal(string cadena)
         {
+            int contadorComa = 0;
             foreach (char caracter in cadena)
             {
                 if (!(char.IsNumber(caracter)))
+                    if(caracter =='.' || caracter == ',')
+                        contadorComa++;
+                    else
+                    return false;
+                if (contadorComa > 1)
                     return false;
             }
             return true;

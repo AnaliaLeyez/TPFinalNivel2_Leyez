@@ -47,6 +47,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tbxPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblObligatorio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,9 +203,9 @@
             this.lblNombre.ForeColor = System.Drawing.Color.Black;
             this.lblNombre.Location = new System.Drawing.Point(32, 92);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(107, 29);
+            this.lblNombre.Size = new System.Drawing.Size(118, 29);
             this.lblNombre.TabIndex = 19;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "*Nombre";
             // 
             // lblCodigo
             // 
@@ -213,9 +214,9 @@
             this.lblCodigo.ForeColor = System.Drawing.Color.Black;
             this.lblCodigo.Location = new System.Drawing.Point(32, 49);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(98, 29);
+            this.lblCodigo.Size = new System.Drawing.Size(109, 29);
             this.lblCodigo.TabIndex = 17;
-            this.lblCodigo.Text = "Código";
+            this.lblCodigo.Text = "*Código";
             // 
             // tbxPrecio
             // 
@@ -224,6 +225,7 @@
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(274, 31);
             this.tbxPrecio.TabIndex = 32;
+            this.tbxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrecio_KeyPress);
             // 
             // lblPrecio
             // 
@@ -232,16 +234,27 @@
             this.lblPrecio.ForeColor = System.Drawing.Color.Black;
             this.lblPrecio.Location = new System.Drawing.Point(32, 345);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(89, 29);
+            this.lblPrecio.Size = new System.Drawing.Size(100, 29);
             this.lblPrecio.TabIndex = 33;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "*Precio";
+            // 
+            // lblObligatorio
+            // 
+            this.lblObligatorio.AutoSize = true;
+            this.lblObligatorio.ForeColor = System.Drawing.Color.Red;
+            this.lblObligatorio.Location = new System.Drawing.Point(53, 541);
+            this.lblObligatorio.Name = "lblObligatorio";
+            this.lblObligatorio.Size = new System.Drawing.Size(204, 25);
+            this.lblObligatorio.TabIndex = 34;
+            this.lblObligatorio.Text = "* Campo Obligatorio";
             // 
             // frmCRUD_Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(925, 534);
+            this.ClientSize = new System.Drawing.Size(944, 615);
+            this.Controls.Add(this.lblObligatorio);
             this.Controls.Add(this.tbxPrecio);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.btnAgregarImg);
@@ -291,5 +304,6 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox tbxPrecio;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblObligatorio;
     }
 }

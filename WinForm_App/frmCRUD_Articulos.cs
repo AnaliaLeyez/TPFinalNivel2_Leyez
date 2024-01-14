@@ -53,7 +53,7 @@ namespace WinForm_App
                     tbxUrlImg.Text = articulo.Imagen;
                     cboxMarca.SelectedValue = articulo.Marca.Id;
                     cboxCategoria.SelectedValue = articulo.Categoria.Id;
-                    tbxPrecio.Text = articulo.Precio.ToString("0");
+                    tbxPrecio.Text = articulo.Precio.ToString("0.00");
                     cargarImagen(articulo.Imagen);
                 }
 
@@ -88,13 +88,23 @@ namespace WinForm_App
                 if (!Validacion.camposObligatorios(tbxCodigo, tbxNombre, tbxPrecio))
                     return;
                 
-                if (Validacion.soloNumeros(tbxPrecio.Text))
+                if (Validacion.soloNumDecimal(tbxPrecio.Text))
+                {
+                    tbxPrecio.Text = tbxPrecio.Text.Replace('.', ',');
                     articulo.Precio = decimal.Parse(tbxPrecio.Text);
+                    if (articulo.Precio == 0)
+                    {
+                        MessageBox.Show("No se admite precio igual a 0");
+                        return;
+                    }
+                    
+                }
                 else
                 {
-                    MessageBox.Show("el precio solo admite nros enteros");
+                    MessageBox.Show("el precio solo admite ingreso numérico (valores decimales positivos)");
                     return;
                 }
+
 
                 //Guargo la img solo si es que levanté img localmente:
                 if (archivo != null && !(tbxUrlImg.Text.ToLower().Contains("http")))
@@ -163,5 +173,22 @@ namespace WinForm_App
                 cargarImagen(archivo.FileName);
             }
         }
+
+        private void tbxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && ((e.KeyChar != ',' && e.KeyChar != '.')))
+                    e.Handled = true;
+
+                if ((e.KeyChar == ',' || e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf(',') > -1 || (sender as TextBox).Text.IndexOf('.') > -1))
+                    e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+    
     }
 }

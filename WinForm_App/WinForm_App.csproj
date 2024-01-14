@@ -53,33 +53,52 @@
     <Compile Include="frmArticulos.Designer.cs">
       <DependentUpon>frmArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBienvenida.Designer.cs">
+      <DependentUpon>FrmBienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCRUD_Articulos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCRUD_Articulos.Designer.cs">
       <DependentUpon>frmCRUD_Articulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReactivarArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReactivarArt.Designer.cs">
+      <DependentUpon>frmReactivarArt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmArticulos.resx">
       <DependentUpon>frmArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBienvenida.resx">
+      <DependentUpon>FrmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCRUD_Articulos.resx">
       <DependentUpon>frmCRUD_Articulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReactivarArt.resx">
+      <DependentUpon>frmReactivarArt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -102,6 +121,45 @@
       <Project>{a5bd3472-87c0-4e59-b495-7e07ef38b726}</Project>
       <Name>negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\imgHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\searchimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search_ico1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\clear_filter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\search32px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Undo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Filter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Create.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

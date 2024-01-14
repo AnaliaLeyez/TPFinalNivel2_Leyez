@@ -17,6 +17,7 @@ namespace WinForm_App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmArticulos());
+            //Application.Run(new FrmBienvenida());
         }
     }
 }
