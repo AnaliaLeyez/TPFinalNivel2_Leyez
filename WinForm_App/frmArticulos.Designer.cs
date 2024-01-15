@@ -61,8 +61,6 @@ namespace WinForm_App
             this.TsMenuAgregarCat = new System.Windows.Forms.ToolStripMenuItem();
             this.TsMenuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.TsMenucerrarApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsMenuCreador = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pboxArticulo = new System.Windows.Forms.PictureBox();
@@ -356,11 +354,10 @@ namespace WinForm_App
             this.menuAdmin.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuAdmin.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.opcionesToolStripMenuItem,
-            this.verToolStripMenuItem});
+            this.opcionesToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(1590, 40);
+            this.menuAdmin.Size = new System.Drawing.Size(1590, 42);
             this.menuAdmin.TabIndex = 41;
             this.menuAdmin.Text = "menuStrip1";
             // 
@@ -371,7 +368,7 @@ namespace WinForm_App
             this.TsMenuSalir,
             this.TsMenucerrarApp});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
             // 
             // TsMenuAgregar
@@ -424,20 +421,6 @@ namespace WinForm_App
             this.TsMenucerrarApp.Size = new System.Drawing.Size(389, 44);
             this.TsMenucerrarApp.Text = "&Cerrar App";
             this.TsMenucerrarApp.Click += new System.EventHandler(this.TsMenuCerrar_Click);
-            // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsMenuCreador});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(68, 36);
-            this.verToolStripMenuItem.Text = "&Ver";
-            // 
-            // TsMenuCreador
-            // 
-            this.TsMenuCreador.Name = "TsMenuCreador";
-            this.TsMenuCreador.Size = new System.Drawing.Size(348, 44);
-            this.TsMenuCreador.Text = "Acerca del Creador";
             // 
             // panel1
             // 
@@ -584,8 +567,6 @@ namespace WinForm_App
         private System.Windows.Forms.ToolStripMenuItem TsMenuAgregarMarca;
         private System.Windows.Forms.ToolStripMenuItem TsMenuAgregarCat;
         private System.Windows.Forms.ToolStripMenuItem TsMenuSalir;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem TsMenuCreador;
         private System.Windows.Forms.ToolStripMenuItem TsMenucerrarApp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClearFilter;
