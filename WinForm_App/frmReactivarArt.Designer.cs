@@ -102,7 +102,7 @@ namespace WinForm_App
             this.btnReactivar.ForeColor = System.Drawing.Color.White;
             this.btnReactivar.Location = new System.Drawing.Point(39, 330);
             this.btnReactivar.Name = "btnReactivar";
-            this.btnReactivar.Size = new System.Drawing.Size(141, 49);
+            this.btnReactivar.Size = new System.Drawing.Size(156, 49);
             this.btnReactivar.TabIndex = 1;
             this.btnReactivar.Text = "Reactivar";
             this.btnReactivar.UseVisualStyleBackColor = false;
@@ -114,9 +114,9 @@ namespace WinForm_App
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(965, 330);
+            this.btnSalir.Location = new System.Drawing.Point(949, 330);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(140, 49);
+            this.btnSalir.Size = new System.Drawing.Size(156, 49);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
