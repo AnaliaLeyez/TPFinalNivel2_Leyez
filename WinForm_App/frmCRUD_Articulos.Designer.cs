@@ -57,7 +57,7 @@
             this.btnAgregarImg.Location = new System.Drawing.Point(476, 190);
             this.btnAgregarImg.Name = "btnAgregarImg";
             this.btnAgregarImg.Size = new System.Drawing.Size(54, 39);
-            this.btnAgregarImg.TabIndex = 31;
+            this.btnAgregarImg.TabIndex = 5;
             this.btnAgregarImg.Text = "+";
             this.btnAgregarImg.UseVisualStyleBackColor = false;
             this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
@@ -66,8 +66,8 @@
             // 
             this.pboxImg.Location = new System.Drawing.Point(541, 45);
             this.pboxImg.Name = "pboxImg";
-            this.pboxImg.Size = new System.Drawing.Size(346, 427);
-            this.pboxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxImg.Size = new System.Drawing.Size(391, 438);
+            this.pboxImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxImg.TabIndex = 30;
             this.pboxImg.TabStop = false;
             // 
@@ -77,7 +77,7 @@
             this.tbxUrlImg.Location = new System.Drawing.Point(196, 190);
             this.tbxUrlImg.Name = "tbxUrlImg";
             this.tbxUrlImg.Size = new System.Drawing.Size(274, 31);
-            this.tbxUrlImg.TabIndex = 22;
+            this.tbxUrlImg.TabIndex = 4;
             this.tbxUrlImg.Leave += new System.EventHandler(this.tbxUrlImg_Leave);
             // 
             // lblUrlImg
@@ -122,7 +122,7 @@
             this.cboxCategoria.Location = new System.Drawing.Point(196, 292);
             this.cboxCategoria.Name = "cboxCategoria";
             this.cboxCategoria.Size = new System.Drawing.Size(274, 33);
-            this.cboxCategoria.TabIndex = 24;
+            this.cboxCategoria.TabIndex = 7;
             // 
             // cboxMarca
             // 
@@ -133,7 +133,7 @@
             this.cboxMarca.Location = new System.Drawing.Point(196, 238);
             this.cboxMarca.Name = "cboxMarca";
             this.cboxMarca.Size = new System.Drawing.Size(274, 33);
-            this.cboxMarca.TabIndex = 23;
+            this.cboxMarca.TabIndex = 6;
             // 
             // btnCancelar
             // 
@@ -143,7 +143,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(306, 434);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 49);
-            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -156,7 +156,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(37, 434);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(129, 49);
-            this.btnAceptar.TabIndex = 25;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -167,7 +167,7 @@
             this.tbxDescripcion.Location = new System.Drawing.Point(196, 139);
             this.tbxDescripcion.Name = "tbxDescripcion";
             this.tbxDescripcion.Size = new System.Drawing.Size(274, 31);
-            this.tbxDescripcion.TabIndex = 20;
+            this.tbxDescripcion.TabIndex = 3;
             // 
             // tbxNombre
             // 
@@ -175,7 +175,7 @@
             this.tbxNombre.Location = new System.Drawing.Point(196, 92);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(274, 31);
-            this.tbxNombre.TabIndex = 18;
+            this.tbxNombre.TabIndex = 2;
             // 
             // tbxCodigo
             // 
@@ -183,7 +183,7 @@
             this.tbxCodigo.Location = new System.Drawing.Point(196, 49);
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(274, 31);
-            this.tbxCodigo.TabIndex = 16;
+            this.tbxCodigo.TabIndex = 1;
             // 
             // lblDescripcion
             // 
@@ -224,7 +224,7 @@
             this.tbxPrecio.Location = new System.Drawing.Point(196, 351);
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(274, 31);
-            this.tbxPrecio.TabIndex = 32;
+            this.tbxPrecio.TabIndex = 8;
             this.tbxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrecio_KeyPress);
             // 
             // lblPrecio
@@ -273,7 +273,11 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(970, 686);
+            this.MinimumSize = new System.Drawing.Size(970, 686);
             this.Name = "frmCRUD_Articulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm CRUD de Articulos";

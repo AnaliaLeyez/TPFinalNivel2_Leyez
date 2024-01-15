@@ -18,3 +18,24 @@ C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\helper.pdb
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.frmReactivarArt.resources
 C:\Users\anali\Documents\Analía\programación con cursos\C# lvl2\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.FrmBienvenida.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\WinForm_App.exe.config
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\WinForm_App.exe
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\WinForm_App.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\dominio.dll
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\helper.dll
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\negocio.dll
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\dominio.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\helper.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\bin\Debug\negocio.pdb
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.csproj.AssemblyReference.cache
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.frmAgregarCategMarca.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.FrmArticulos.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.FrmBienvenida.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.frmCRUD_Articulos.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.FrmReactivarArt.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.Properties.Resources.resources
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.csproj.GenerateResource.cache
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.csproj.CoreCompileInputs.cache
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.csproj.CopyComplete
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.exe
+C:\Users\anali\Documents\Analía\programación con cursos\TPFinalNivel2_Leyez\WinForm_App\obj\Debug\WinForm_App.pdb

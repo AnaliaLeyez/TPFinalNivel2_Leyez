@@ -39,17 +39,17 @@ namespace helper
             foreach (char caracter in cadena)
             {
                 if (!(char.IsNumber(caracter)))
-                    if(caracter =='.' || caracter == ',')
+                    if (caracter == '.' || caracter == ',')
                         contadorComa++;
                     else
-                    return false;
+                        return false;
                 if (contadorComa > 1)
                     return false;
             }
             return true;
         }
 
-        
+
         public static bool camposObligatorios(TextBox tbxCodigo, TextBox tbxNombre, TextBox tbxPrecio)
         {
             bool vacio = false;
@@ -72,8 +72,31 @@ namespace helper
                 return false;
             return true;
         }
-    }
 
-    
+        public static bool validarTbox(string cadena)
+        {
+            if (string.IsNullOrEmpty(cadena))
+            {
+                MessageBox.Show("No cargó información", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (cadena.Length < 2 || cadena.Length > 50)
+            {
+                MessageBox.Show("Mínimo 3 caractéres y máximo 50");
+                return false;
+            }
 
+            //validar que no haya caracteres especiales, solo letras y numeros
+            // que los MessageBox sean de tipo "Alerta"
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsLetterOrDigit(caracter))
+                {
+                    MessageBox.Show("Solo se admiten letras y números");
+                    return false;
+                }
+            }
+            return true;
+        }
+    }   
 }

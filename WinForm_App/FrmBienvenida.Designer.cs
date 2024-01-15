@@ -62,7 +62,7 @@
             // 
             // statusStripHome
             // 
-            this.statusStripHome.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.statusStripHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(255)))));
             this.statusStripHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStripHome.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.statusStripHome.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {

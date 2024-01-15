@@ -140,7 +140,7 @@ namespace WinForm_App
             this.btnEliminar.BackColor = System.Drawing.Color.Black;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Location = new System.Drawing.Point(-1, 901);
+            this.btnEliminar.Location = new System.Drawing.Point(-1, 857);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(250, 109);
@@ -325,7 +325,7 @@ namespace WinForm_App
             this.btnBaja.BackColor = System.Drawing.Color.Black;
             this.btnBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaja.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBaja.Location = new System.Drawing.Point(-1, 675);
+            this.btnBaja.Location = new System.Drawing.Point(0, 657);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(250, 109);
@@ -339,7 +339,7 @@ namespace WinForm_App
             this.btnReactivar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
             this.btnReactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReactivar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnReactivar.Location = new System.Drawing.Point(0, 231);
+            this.btnReactivar.Location = new System.Drawing.Point(-1, 249);
             this.btnReactivar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnReactivar.Name = "btnReactivar";
             this.btnReactivar.Size = new System.Drawing.Size(250, 109);
@@ -358,7 +358,7 @@ namespace WinForm_App
             this.verToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(1590, 48);
+            this.menuAdmin.Size = new System.Drawing.Size(1590, 42);
             this.menuAdmin.TabIndex = 41;
             this.menuAdmin.Text = "menuStrip1";
             // 
@@ -369,7 +369,7 @@ namespace WinForm_App
             this.TsMenuSalir,
             this.TsMenucerrarApp});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 44);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
             // 
             // TsMenuAgregar
@@ -386,21 +386,25 @@ namespace WinForm_App
             // 
             this.TsMenuAgregarArt.Name = "TsMenuAgregarArt";
             this.TsMenuAgregarArt.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.TsMenuAgregarArt.Size = new System.Drawing.Size(311, 44);
+            this.TsMenuAgregarArt.Size = new System.Drawing.Size(359, 44);
             this.TsMenuAgregarArt.Text = "Artículo";
             this.TsMenuAgregarArt.Click += new System.EventHandler(this.TsMenuAgregarArticulo_Click);
             // 
             // TsMenuAgregarMarca
             // 
             this.TsMenuAgregarMarca.Name = "TsMenuAgregarMarca";
-            this.TsMenuAgregarMarca.Size = new System.Drawing.Size(311, 44);
+            this.TsMenuAgregarMarca.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.TsMenuAgregarMarca.Size = new System.Drawing.Size(359, 44);
             this.TsMenuAgregarMarca.Text = "Marca";
+            this.TsMenuAgregarMarca.Click += new System.EventHandler(this.TsMenuAgregarMarca_Click);
             // 
             // TsMenuAgregarCat
             // 
             this.TsMenuAgregarCat.Name = "TsMenuAgregarCat";
-            this.TsMenuAgregarCat.Size = new System.Drawing.Size(311, 44);
+            this.TsMenuAgregarCat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.TsMenuAgregarCat.Size = new System.Drawing.Size(359, 44);
             this.TsMenuAgregarCat.Text = "Categoría";
+            this.TsMenuAgregarCat.Click += new System.EventHandler(this.TsMenuAgregarCat_Click);
             // 
             // TsMenuSalir
             // 
@@ -424,7 +428,7 @@ namespace WinForm_App
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsMenuCreador});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(68, 44);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(68, 38);
             this.verToolStripMenuItem.Text = "&Ver";
             // 
             // TsMenuCreador
@@ -454,7 +458,7 @@ namespace WinForm_App
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnAgregar.Location = new System.Drawing.Point(-1, 0);
+            this.btnAgregar.Location = new System.Drawing.Point(-1, 46);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(250, 109);
@@ -490,8 +494,10 @@ namespace WinForm_App
             this.Controls.Add(this.pboxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.MaximizeBox = false;
             this.Name = "FrmArticulos";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -23,7 +23,7 @@ namespace negocio
                 {
                     Categoria aux = new Categoria();
                     aux.Id = (int)lector["Id"];
-                    aux.Descripcion = (string)lector["Descripcion"];                    
+                    aux.Descripcion = (string)lector["Descripcion"];
 
                     listaCateg.Add(aux);
                 }
@@ -44,10 +44,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into CATEGORIAS (Id, Descripcion) values (@Id, @Descripcion)");
-                datos.setearParametro("@Id", nuevo.Id);
+                datos.setearConsulta("insert into CATEGORIAS (Descripcion) values (@Descripcion)");
                 datos.setearParametro("@Descripcion", nuevo.Descripcion);
-
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

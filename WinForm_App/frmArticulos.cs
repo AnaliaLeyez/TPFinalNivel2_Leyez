@@ -40,11 +40,6 @@ namespace WinForm_App
                 listaArticulo = negocio.listar();
                 dgvArticulos.DataSource = listaArticulo;
                 ocultarColumnas();
-                dgvArticulos.Columns[1].Width = 60;
-                dgvArticulos.Columns[2].Width = 120;
-                dgvArticulos.Columns[4].Width = 100;
-                dgvArticulos.Columns[5].Width = 100;
-                dgvArticulos.Columns[7].Width = 80;
             }
             catch (Exception ex)
             {
@@ -153,7 +148,6 @@ namespace WinForm_App
             filtroAv();
         }
 
-
         private void txtboxFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Articulo> listaFiltrada;
@@ -168,17 +162,8 @@ namespace WinForm_App
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
 
-            dgvArticulos.Columns[1].Width = 60;
-            dgvArticulos.Columns[2].Width = 120;
-            dgvArticulos.Columns[4].Width = 100;
-            dgvArticulos.Columns[5].Width = 100;
-            dgvArticulos.Columns[7].Width = 80;
-
             validarCeldaSelec();
-
             ocultarColumnas();
-
-
         }
 
         private void cboxCampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -282,14 +267,8 @@ namespace WinForm_App
                 string campo = cboxCampo.SelectedItem.ToString();
                 string criterio = cboxCriterio.SelectedItem.ToString();
                 string filtro = txtboxFiltroAvanzado.Text;
-
                 dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
 
-                dgvArticulos.Columns[1].Width = 60;
-                dgvArticulos.Columns[2].Width = 120;
-                dgvArticulos.Columns[4].Width = 100;
-                dgvArticulos.Columns[5].Width = 100;
-                dgvArticulos.Columns[7].Width = 80;
                 validarCeldaSelec();
             }
             catch (Exception ex)
@@ -307,6 +286,16 @@ namespace WinForm_App
             }
         }
 
-        
+        private void TsMenuAgregarMarca_Click(object sender, EventArgs e)
+        {
+            frmAgregarCategMarca nuevaMarca = new frmAgregarCategMarca(true);
+            nuevaMarca.ShowDialog();
+        }
+
+        private void TsMenuAgregarCat_Click(object sender, EventArgs e)
+        {
+            frmAgregarCategMarca nuevaCateg = new frmAgregarCategMarca();
+            nuevaCateg.ShowDialog();
+        }
     }
 }
