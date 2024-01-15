@@ -66,6 +66,9 @@ namespace WinForm_App
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pboxArticulo = new System.Windows.Forms.PictureBox();
+            this.lblMostrarOcultar = new System.Windows.Forms.Label();
+            this.lblDescCodigo = new System.Windows.Forms.Label();
+            this.lblDescDescripcion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.panelFiltroAv.SuspendLayout();
             this.menuAdmin.SuspendLayout();
@@ -106,8 +109,6 @@ namespace WinForm_App
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvArticulos.Location = new System.Drawing.Point(352, 229);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.dgvArticulos.MaximumSize = new System.Drawing.Size(1766, 232);
-            this.dgvArticulos.MinimumSize = new System.Drawing.Size(1066, 232);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -117,7 +118,7 @@ namespace WinForm_App
             this.dgvArticulos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvArticulos.RowTemplate.Height = 33;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(1066, 232);
+            this.dgvArticulos.Size = new System.Drawing.Size(923, 232);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
@@ -220,7 +221,7 @@ namespace WinForm_App
             this.txtboxFiltro.BackColor = System.Drawing.Color.White;
             this.txtboxFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtboxFiltro.ForeColor = System.Drawing.Color.Black;
-            this.txtboxFiltro.Location = new System.Drawing.Point(470, 169);
+            this.txtboxFiltro.Location = new System.Drawing.Point(549, 169);
             this.txtboxFiltro.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtboxFiltro.Name = "txtboxFiltro";
             this.txtboxFiltro.Size = new System.Drawing.Size(545, 38);
@@ -231,7 +232,7 @@ namespace WinForm_App
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(268, 169);
+            this.lblFiltro.Location = new System.Drawing.Point(347, 169);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(165, 29);
@@ -288,7 +289,7 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescNombre.AutoSize = true;
             this.lblDescNombre.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescNombre.Location = new System.Drawing.Point(925, 569);
+            this.lblDescNombre.Location = new System.Drawing.Point(941, 616);
             this.lblDescNombre.Name = "lblDescNombre";
             this.lblDescNombre.Size = new System.Drawing.Size(153, 38);
             this.lblDescNombre.TabIndex = 36;
@@ -301,11 +302,12 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescMarca.AutoSize = true;
             this.lblDescMarca.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescMarca.Location = new System.Drawing.Point(925, 663);
+            this.lblDescMarca.Location = new System.Drawing.Point(941, 530);
             this.lblDescMarca.Name = "lblDescMarca";
             this.lblDescMarca.Size = new System.Drawing.Size(122, 38);
             this.lblDescMarca.TabIndex = 37;
             this.lblDescMarca.Text = "Marca";
+            this.lblDescMarca.Visible = false;
             // 
             // lblDescPrecio
             // 
@@ -314,7 +316,7 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescPrecio.AutoSize = true;
             this.lblDescPrecio.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescPrecio.Location = new System.Drawing.Point(925, 760);
+            this.lblDescPrecio.Location = new System.Drawing.Point(941, 700);
             this.lblDescPrecio.Name = "lblDescPrecio";
             this.lblDescPrecio.Size = new System.Drawing.Size(122, 38);
             this.lblDescPrecio.TabIndex = 38;
@@ -358,7 +360,7 @@ namespace WinForm_App
             this.verToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(1590, 42);
+            this.menuAdmin.Size = new System.Drawing.Size(1590, 40);
             this.menuAdmin.TabIndex = 41;
             this.menuAdmin.Text = "menuStrip1";
             // 
@@ -369,7 +371,7 @@ namespace WinForm_App
             this.TsMenuSalir,
             this.TsMenucerrarApp});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
             // 
             // TsMenuAgregar
@@ -386,7 +388,7 @@ namespace WinForm_App
             // 
             this.TsMenuAgregarArt.Name = "TsMenuAgregarArt";
             this.TsMenuAgregarArt.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.TsMenuAgregarArt.Size = new System.Drawing.Size(359, 44);
+            this.TsMenuAgregarArt.Size = new System.Drawing.Size(331, 44);
             this.TsMenuAgregarArt.Text = "Artículo";
             this.TsMenuAgregarArt.Click += new System.EventHandler(this.TsMenuAgregarArticulo_Click);
             // 
@@ -394,7 +396,7 @@ namespace WinForm_App
             // 
             this.TsMenuAgregarMarca.Name = "TsMenuAgregarMarca";
             this.TsMenuAgregarMarca.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.TsMenuAgregarMarca.Size = new System.Drawing.Size(359, 44);
+            this.TsMenuAgregarMarca.Size = new System.Drawing.Size(331, 44);
             this.TsMenuAgregarMarca.Text = "Marca";
             this.TsMenuAgregarMarca.Click += new System.EventHandler(this.TsMenuAgregarMarca_Click);
             // 
@@ -402,7 +404,7 @@ namespace WinForm_App
             // 
             this.TsMenuAgregarCat.Name = "TsMenuAgregarCat";
             this.TsMenuAgregarCat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.TsMenuAgregarCat.Size = new System.Drawing.Size(359, 44);
+            this.TsMenuAgregarCat.Size = new System.Drawing.Size(331, 44);
             this.TsMenuAgregarCat.Text = "Categoría";
             this.TsMenuAgregarCat.Click += new System.EventHandler(this.TsMenuAgregarCat_Click);
             // 
@@ -428,7 +430,7 @@ namespace WinForm_App
             this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsMenuCreador});
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(68, 38);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(68, 36);
             this.verToolStripMenuItem.Text = "&Ver";
             // 
             // TsMenuCreador
@@ -477,6 +479,41 @@ namespace WinForm_App
             this.pboxArticulo.TabIndex = 1;
             this.pboxArticulo.TabStop = false;
             // 
+            // lblMostrarOcultar
+            // 
+            this.lblMostrarOcultar.AutoSize = true;
+            this.lblMostrarOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMostrarOcultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMostrarOcultar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
+            this.lblMostrarOcultar.Location = new System.Drawing.Point(1232, 984);
+            this.lblMostrarOcultar.Name = "lblMostrarOcultar";
+            this.lblMostrarOcultar.Size = new System.Drawing.Size(247, 29);
+            this.lblMostrarOcultar.TabIndex = 43;
+            this.lblMostrarOcultar.Text = "Más detalles / Menos ";
+            this.lblMostrarOcultar.Click += new System.EventHandler(this.lblMostrarOcultar_Click);
+            // 
+            // lblDescCodigo
+            // 
+            this.lblDescCodigo.AutoSize = true;
+            this.lblDescCodigo.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDescCodigo.Location = new System.Drawing.Point(941, 865);
+            this.lblDescCodigo.Name = "lblDescCodigo";
+            this.lblDescCodigo.Size = new System.Drawing.Size(130, 38);
+            this.lblDescCodigo.TabIndex = 44;
+            this.lblDescCodigo.Text = "Codigo";
+            this.lblDescCodigo.Visible = false;
+            // 
+            // lblDescDescripcion
+            // 
+            this.lblDescDescripcion.AutoSize = true;
+            this.lblDescDescripcion.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDescDescripcion.Location = new System.Drawing.Point(941, 782);
+            this.lblDescDescripcion.Name = "lblDescDescripcion";
+            this.lblDescDescripcion.Size = new System.Drawing.Size(214, 38);
+            this.lblDescDescripcion.TabIndex = 45;
+            this.lblDescDescripcion.Text = "Descripcion";
+            this.lblDescDescripcion.Visible = false;
+            // 
             // FrmArticulos
             // 
             this.AccessibleDescription = "Formulario de artículos";
@@ -484,6 +521,9 @@ namespace WinForm_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1590, 1057);
+            this.Controls.Add(this.lblDescDescripcion);
+            this.Controls.Add(this.lblDescCodigo);
+            this.Controls.Add(this.lblMostrarOcultar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDescPrecio);
             this.Controls.Add(this.lblDescMarca);
@@ -549,6 +589,9 @@ namespace WinForm_App
         private System.Windows.Forms.ToolStripMenuItem TsMenucerrarApp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClearFilter;
+        private Label lblMostrarOcultar;
+        private Label lblDescCodigo;
+        private Label lblDescDescripcion;
     }
 }
 

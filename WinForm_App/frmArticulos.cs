@@ -52,6 +52,7 @@ namespace WinForm_App
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Imagen"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Visible = false;
+            dgvArticulos.Columns["Codigo"].Visible=false;
         }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
@@ -215,9 +216,19 @@ namespace WinForm_App
             {
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.Imagen);
-                lblDescNombre.Text = seleccionado.Nombre;
-                lblDescMarca.Text = seleccionado.Marca.Descripcion;
-                lblDescPrecio.Text = "$" + seleccionado.Precio.ToString("0.00");
+                if(lblDescDescripcion.Visible)
+                {
+                    lblDescNombre.Text = "Nombre: " + seleccionado.Nombre;
+                    lblDescMarca.Text = "Marca: " + seleccionado.Marca;
+                    lblDescPrecio.Text = "Precio: $" + seleccionado.Precio.ToString("0.00");
+                    lblDescCodigo.Text = "Código: " + seleccionado.Codigo;
+                    lblDescDescripcion.Text = "Descripción: " + seleccionado.Descripcion;
+                }
+                else
+                {
+                    lblDescNombre.Text = seleccionado.Nombre;
+                    lblDescPrecio.Text = "$" + seleccionado.Precio.ToString("0.00");
+                }                
 
                 btnEliminar.Enabled = true;
                 btnEliminar.BackColor = System.Drawing.Color.Black;
@@ -231,6 +242,8 @@ namespace WinForm_App
                 lblDescNombre.Text = "Sin coincidencias";
                 lblDescMarca.Text = "";
                 lblDescPrecio.Text = "";
+                lblDescCodigo.Text = "";
+                lblDescDescripcion.Text = "";
                 pboxArticulo.Load("https://faculty.eng.ufl.edu/elliot-douglas/wp-content/uploads/sites/70/2015/11/img-placeholder.png");
 
                 btnEliminar.Enabled = false;
@@ -251,6 +264,8 @@ namespace WinForm_App
         {
             cargarGrilla();
             txtboxFiltroAvanzado.Text = "";
+            txtboxFiltro.Text = "";
+            cboxCampo.SelectedIndex = -1;
         }
 
 
@@ -296,6 +311,52 @@ namespace WinForm_App
         {
             frmAgregarCategMarca nuevaCateg = new frmAgregarCategMarca();
             nuevaCateg.ShowDialog();
+        }
+
+        private void lblMostrarOcultar_Click(object sender, EventArgs e)
+        {
+            if (lblDescCodigo.Visible)
+            {
+                
+                if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
+                {
+                    lblDescMarca.Visible = false;
+                    lblDescCodigo.Visible = false;
+                    lblDescDescripcion.Visible = false;
+                    Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    lblDescNombre.Text = articulo.Nombre;
+                }
+                else
+                {
+                    lblDescNombre.Text = "Sin coincidencias";
+                    lblDescCodigo.Text = "";
+                    lblDescMarca.Text = "";
+                    lblDescDescripcion.Text = "";
+                    lblDescPrecio.Text = "";
+                }
+               
+            }
+            else
+            {
+                
+                if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
+                {
+                    lblDescMarca.Visible =true;
+                    lblDescCodigo.Visible = true;
+                    lblDescDescripcion.Visible = true;
+                    Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    lblDescNombre.Text = "Nombre: " + articulo.Nombre;                    
+                    lblDescMarca.Text = "Marca: " + articulo.Marca;
+                    lblDescPrecio.Text = "Precio: $" + articulo.Precio.ToString("0.00");
+                    lblDescCodigo.Text = "Código: " + articulo.Codigo;
+                    lblDescDescripcion.Text = "Descripción: " + articulo.Descripcion;
+                }
+                else
+                {
+                    lblDescNombre.Text = "Sin coincidencias";
+                    lblDescPrecio.Text = "";
+                }
+            }
         }
     }
 }
