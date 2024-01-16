@@ -75,6 +75,7 @@
             // 
             // pboxMail
             // 
+            this.pboxMail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxMail.Image = global::WinForm_App.Properties.Resources.mail_64px;
             this.pboxMail.Location = new System.Drawing.Point(596, 275);
             this.pboxMail.Name = "pboxMail";
@@ -86,6 +87,7 @@
             // 
             // pboxPorfolio
             // 
+            this.pboxPorfolio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxPorfolio.Image = global::WinForm_App.Properties.Resources.perfil_64px;
             this.pboxPorfolio.Location = new System.Drawing.Point(428, 275);
             this.pboxPorfolio.Name = "pboxPorfolio";
@@ -97,6 +99,7 @@
             // 
             // pboxGithub
             // 
+            this.pboxGithub.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxGithub.Image = global::WinForm_App.Properties.Resources.github_64px;
             this.pboxGithub.Location = new System.Drawing.Point(250, 275);
             this.pboxGithub.Name = "pboxGithub";
@@ -108,6 +111,7 @@
             // 
             // pboxLinkedin
             // 
+            this.pboxLinkedin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxLinkedin.Image = global::WinForm_App.Properties.Resources.linkedin_64px;
             this.pboxLinkedin.Location = new System.Drawing.Point(80, 275);
             this.pboxLinkedin.Name = "pboxLinkedin";

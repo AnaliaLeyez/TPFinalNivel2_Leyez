@@ -60,6 +60,7 @@
             this.tboxNuevaCat.Name = "tboxNuevaCat";
             this.tboxNuevaCat.Size = new System.Drawing.Size(330, 44);
             this.tboxNuevaCat.TabIndex = 2;
+            this.tboxNuevaCat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxNuevaCat_KeyPress);
             // 
             // btnAgregarCat
             // 

@@ -33,6 +33,20 @@ namespace WinForm_App
 
         private void btnAgregarCat_Click(object sender, EventArgs e)
         {
+            agregarCat();
+        }
+
+        private void tboxNuevaCat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                agregarCat();
+                e.Handled = true; // evita que se genere el sonido de la tecla Enter
+            }
+        }
+
+        private void agregarCat()
+        {
             try
             {
                 if (!Validacion.validarTbox(tboxNuevaCat.Text))
@@ -60,6 +74,5 @@ namespace WinForm_App
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

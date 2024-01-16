@@ -21,6 +21,11 @@ namespace WinForm_App
             InitializeComponent();
         }
 
+        private void FiltroTimer_Tick(object sender, EventArgs e)
+        {
+            validarCeldaSelec();
+        }
+
         private void FrmArticulos_Load(object sender, EventArgs e)
         {
             this.ClientSize = new System.Drawing.Size(805, 545);
