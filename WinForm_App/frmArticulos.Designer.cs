@@ -67,6 +67,7 @@ namespace WinForm_App
             this.lblMostrarOcultar = new System.Windows.Forms.Label();
             this.lblDescCodigo = new System.Windows.Forms.Label();
             this.lblDescDescripcion = new System.Windows.Forms.Label();
+            this.lblDescCateg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.panelFiltroAv.SuspendLayout();
             this.menuAdmin.SuspendLayout();
@@ -287,7 +288,7 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescNombre.AutoSize = true;
             this.lblDescNombre.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescNombre.Location = new System.Drawing.Point(941, 616);
+            this.lblDescNombre.Location = new System.Drawing.Point(941, 660);
             this.lblDescNombre.Name = "lblDescNombre";
             this.lblDescNombre.Size = new System.Drawing.Size(153, 38);
             this.lblDescNombre.TabIndex = 36;
@@ -300,7 +301,7 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescMarca.AutoSize = true;
             this.lblDescMarca.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescMarca.Location = new System.Drawing.Point(941, 530);
+            this.lblDescMarca.Location = new System.Drawing.Point(941, 579);
             this.lblDescMarca.Name = "lblDescMarca";
             this.lblDescMarca.Size = new System.Drawing.Size(122, 38);
             this.lblDescMarca.TabIndex = 37;
@@ -314,7 +315,7 @@ namespace WinForm_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescPrecio.AutoSize = true;
             this.lblDescPrecio.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescPrecio.Location = new System.Drawing.Point(941, 700);
+            this.lblDescPrecio.Location = new System.Drawing.Point(941, 744);
             this.lblDescPrecio.Name = "lblDescPrecio";
             this.lblDescPrecio.Size = new System.Drawing.Size(122, 38);
             this.lblDescPrecio.TabIndex = 38;
@@ -357,7 +358,7 @@ namespace WinForm_App
             this.opcionesToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(1590, 42);
+            this.menuAdmin.Size = new System.Drawing.Size(1590, 40);
             this.menuAdmin.TabIndex = 41;
             this.menuAdmin.Text = "menuStrip1";
             // 
@@ -368,7 +369,7 @@ namespace WinForm_App
             this.TsMenuSalir,
             this.TsMenucerrarApp});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
             // 
             // TsMenuAgregar
@@ -479,7 +480,7 @@ namespace WinForm_App
             // 
             this.lblDescCodigo.AutoSize = true;
             this.lblDescCodigo.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescCodigo.Location = new System.Drawing.Point(941, 865);
+            this.lblDescCodigo.Location = new System.Drawing.Point(941, 909);
             this.lblDescCodigo.Name = "lblDescCodigo";
             this.lblDescCodigo.Size = new System.Drawing.Size(130, 38);
             this.lblDescCodigo.TabIndex = 44;
@@ -490,12 +491,26 @@ namespace WinForm_App
             // 
             this.lblDescDescripcion.AutoSize = true;
             this.lblDescDescripcion.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescDescripcion.Location = new System.Drawing.Point(941, 782);
+            this.lblDescDescripcion.Location = new System.Drawing.Point(941, 826);
             this.lblDescDescripcion.Name = "lblDescDescripcion";
             this.lblDescDescripcion.Size = new System.Drawing.Size(214, 38);
             this.lblDescDescripcion.TabIndex = 45;
             this.lblDescDescripcion.Text = "Descripcion";
             this.lblDescDescripcion.Visible = false;
+            // 
+            // lblDescCateg
+            // 
+            this.lblDescCateg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDescCateg.AutoSize = true;
+            this.lblDescCateg.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDescCateg.Location = new System.Drawing.Point(941, 498);
+            this.lblDescCateg.Name = "lblDescCateg";
+            this.lblDescCateg.Size = new System.Drawing.Size(175, 38);
+            this.lblDescCateg.TabIndex = 46;
+            this.lblDescCateg.Text = "Categoria";
+            this.lblDescCateg.Visible = false;
             // 
             // FrmArticulos
             // 
@@ -504,6 +519,7 @@ namespace WinForm_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1590, 1057);
+            this.Controls.Add(this.lblDescCateg);
             this.Controls.Add(this.lblDescDescripcion);
             this.Controls.Add(this.lblDescCodigo);
             this.Controls.Add(this.lblMostrarOcultar);
@@ -573,6 +589,7 @@ namespace WinForm_App
         private Label lblMostrarOcultar;
         private Label lblDescCodigo;
         private Label lblDescDescripcion;
+        private Label lblDescCateg;
     }
 }
 

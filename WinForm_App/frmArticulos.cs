@@ -52,7 +52,7 @@ namespace WinForm_App
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Imagen"].Visible = false;
             dgvArticulos.Columns["Descripcion"].Visible = false;
-            dgvArticulos.Columns["Codigo"].Visible=false;
+            dgvArticulos.Columns["Codigo"].Visible = false;
         }
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
@@ -81,7 +81,12 @@ namespace WinForm_App
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvArticulos.CurrentRow!=null && dgvArticulos.CurrentRow.DataBoundItem != null)
+            if (listaArticulo.Count > 0 && (dgvArticulos.CurrentRow == null))
+            {
+                dgvArticulos.Rows[0].Selected = true;
+                dgvArticulos.CurrentCell = dgvArticulos.Rows[0].Cells[2];
+            }
+            if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
             {
                 Articulo modificable = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 frmCRUD_Articulos editar = new frmCRUD_Articulos(modificable);
@@ -102,9 +107,14 @@ namespace WinForm_App
             opcEliminar(true);
         }
 
-        private void opcEliminar(bool logico=false)
+        private void opcEliminar(bool logico = false)
         {
             //Chequeo que haya un item seleccionado:
+            if (listaArticulo.Count > 0 && (dgvArticulos.CurrentRow == null))
+            {
+                dgvArticulos.Rows[0].Selected = true;
+                dgvArticulos.CurrentCell = dgvArticulos.Rows[0].Cells[2];
+            }
 
             if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
             {
@@ -129,7 +139,7 @@ namespace WinForm_App
             }
             else
                 MessageBox.Show("Ninguna fila seleccionada");
-            
+
         }
 
         private bool confirmarAccion(string cod, bool logico)
@@ -216,19 +226,20 @@ namespace WinForm_App
             {
                 Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.Imagen);
-                if(lblDescDescripcion.Visible)
+                if (lblDescDescripcion.Visible)
                 {
                     lblDescNombre.Text = "Nombre: " + seleccionado.Nombre;
-                    lblDescMarca.Text = "Marca: " + seleccionado.Marca;
+                    lblDescMarca.Text = "Marca: " + seleccionado.Marca.Descripcion;
                     lblDescPrecio.Text = "Precio: $" + seleccionado.Precio.ToString("0.00");
                     lblDescCodigo.Text = "Código: " + seleccionado.Codigo;
                     lblDescDescripcion.Text = "Descripción: " + seleccionado.Descripcion;
+                    lblDescCateg.Text = "Sector: " + seleccionado.Categoria.Descripcion;
                 }
                 else
                 {
                     lblDescNombre.Text = seleccionado.Nombre;
                     lblDescPrecio.Text = "$" + seleccionado.Precio.ToString("0.00");
-                }                
+                }
 
                 btnEliminar.Enabled = true;
                 btnEliminar.BackColor = System.Drawing.Color.Black;
@@ -244,6 +255,7 @@ namespace WinForm_App
                 lblDescPrecio.Text = "";
                 lblDescCodigo.Text = "";
                 lblDescDescripcion.Text = "";
+                lblDescCateg.Text = "";
                 pboxArticulo.Load("https://faculty.eng.ufl.edu/elliot-douglas/wp-content/uploads/sites/70/2015/11/img-placeholder.png");
 
                 btnEliminar.Enabled = false;
@@ -267,8 +279,6 @@ namespace WinForm_App
             txtboxFiltro.Text = "";
             cboxCampo.SelectedIndex = -1;
         }
-
-
 
         private void filtroAv()
         {
@@ -315,14 +325,21 @@ namespace WinForm_App
 
         private void lblMostrarOcultar_Click(object sender, EventArgs e)
         {
+            if (listaArticulo.Count > 0 && (dgvArticulos.CurrentRow == null) && lblDescNombre.Text != "Sin coincidencias")
+            {
+                dgvArticulos.Rows[0].Selected = true;
+                dgvArticulos.CurrentCell = dgvArticulos.Rows[0].Cells[2];
+            }
+
             if (lblDescCodigo.Visible)
             {
-                
+
                 if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
                 {
                     lblDescMarca.Visible = false;
                     lblDescCodigo.Visible = false;
                     lblDescDescripcion.Visible = false;
+                    lblDescCateg.Visible = false;
                     Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                     lblDescNombre.Text = articulo.Nombre;
                 }
@@ -333,23 +350,26 @@ namespace WinForm_App
                     lblDescMarca.Text = "";
                     lblDescDescripcion.Text = "";
                     lblDescPrecio.Text = "";
+                    lblDescCateg.Text = "";
                 }
-               
+
             }
             else
             {
-                
+
                 if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.DataBoundItem != null)
                 {
-                    lblDescMarca.Visible =true;
+                    lblDescMarca.Visible = true;
                     lblDescCodigo.Visible = true;
                     lblDescDescripcion.Visible = true;
+                    lblDescCateg.Visible = true;
                     Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                    lblDescNombre.Text = "Nombre: " + articulo.Nombre;                    
+                    lblDescNombre.Text = "Nombre: " + articulo.Nombre;
                     lblDescMarca.Text = "Marca: " + articulo.Marca;
                     lblDescPrecio.Text = "Precio: $" + articulo.Precio.ToString("0.00");
                     lblDescCodigo.Text = "Código: " + articulo.Codigo;
                     lblDescDescripcion.Text = "Descripción: " + articulo.Descripcion;
+                    lblDescCateg.Text = "Sector: " + articulo.Categoria.Descripcion;
                 }
                 else
                 {
