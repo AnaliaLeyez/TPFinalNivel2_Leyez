@@ -46,8 +46,6 @@ namespace WinForm_App
             this.txtboxFiltro = new System.Windows.Forms.TextBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.panelFiltroAv = new System.Windows.Forms.Panel();
-            this.btnClearFilter = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblDescNombre = new System.Windows.Forms.Label();
             this.lblDescMarca = new System.Windows.Forms.Label();
             this.lblDescPrecio = new System.Windows.Forms.Label();
@@ -63,11 +61,14 @@ namespace WinForm_App
             this.TsMenucerrarApp = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.pboxArticulo = new System.Windows.Forms.PictureBox();
             this.lblMostrarOcultar = new System.Windows.Forms.Label();
             this.lblDescCodigo = new System.Windows.Forms.Label();
             this.lblDescDescripcion = new System.Windows.Forms.Label();
             this.lblDescCateg = new System.Windows.Forms.Label();
+            this.btnClearFilter = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.pboxArticulo = new System.Windows.Forms.PictureBox();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.panelFiltroAv.SuspendLayout();
             this.menuAdmin.SuspendLayout();
@@ -256,31 +257,6 @@ namespace WinForm_App
             this.panelFiltroAv.Size = new System.Drawing.Size(1305, 101);
             this.panelFiltroAv.TabIndex = 35;
             // 
-            // btnClearFilter
-            // 
-            this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
-            this.btnClearFilter.Image = global::WinForm_App.Properties.Resources.Undo;
-            this.btnClearFilter.Location = new System.Drawing.Point(1218, 35);
-            this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(60, 52);
-            this.btnClearFilter.TabIndex = 0;
-            this.btnClearFilter.UseVisualStyleBackColor = false;
-            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
-            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
-            this.btnFiltrar.Image = global::WinForm_App.Properties.Resources.Filter;
-            this.btnFiltrar.Location = new System.Drawing.Point(1122, 32);
-            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(60, 52);
-            this.btnFiltrar.TabIndex = 23;
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
             // lblDescNombre
             // 
             this.lblDescNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -355,10 +331,11 @@ namespace WinForm_App
             this.menuAdmin.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuAdmin.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.opcionesToolStripMenuItem});
+            this.opcionesToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(1590, 40);
+            this.menuAdmin.Size = new System.Drawing.Size(1590, 42);
             this.menuAdmin.TabIndex = 41;
             this.menuAdmin.Text = "menuStrip1";
             // 
@@ -369,7 +346,7 @@ namespace WinForm_App
             this.TsMenuSalir,
             this.TsMenucerrarApp});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 36);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(134, 38);
             this.opcionesToolStripMenuItem.Text = "&Opciones";
             // 
             // TsMenuAgregar
@@ -453,16 +430,6 @@ namespace WinForm_App
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // pboxArticulo
-            // 
-            this.pboxArticulo.Location = new System.Drawing.Point(352, 477);
-            this.pboxArticulo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.pboxArticulo.Name = "pboxArticulo";
-            this.pboxArticulo.Size = new System.Drawing.Size(541, 556);
-            this.pboxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxArticulo.TabIndex = 1;
-            this.pboxArticulo.TabStop = false;
-            // 
             // lblMostrarOcultar
             // 
             this.lblMostrarOcultar.AutoSize = true;
@@ -511,6 +478,48 @@ namespace WinForm_App
             this.lblDescCateg.TabIndex = 46;
             this.lblDescCateg.Text = "Categoria";
             this.lblDescCateg.Visible = false;
+            // 
+            // btnClearFilter
+            // 
+            this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
+            this.btnClearFilter.Image = global::WinForm_App.Properties.Resources.Undo;
+            this.btnClearFilter.Location = new System.Drawing.Point(1218, 35);
+            this.btnClearFilter.Name = "btnClearFilter";
+            this.btnClearFilter.Size = new System.Drawing.Size(60, 52);
+            this.btnClearFilter.TabIndex = 0;
+            this.btnClearFilter.UseVisualStyleBackColor = false;
+            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(80)))), ((int)(((byte)(190)))));
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.ForeColor = System.Drawing.Color.White;
+            this.btnFiltrar.Image = global::WinForm_App.Properties.Resources.Filter;
+            this.btnFiltrar.Location = new System.Drawing.Point(1122, 32);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(60, 52);
+            this.btnFiltrar.TabIndex = 23;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // pboxArticulo
+            // 
+            this.pboxArticulo.Location = new System.Drawing.Point(352, 477);
+            this.pboxArticulo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.pboxArticulo.Name = "pboxArticulo";
+            this.pboxArticulo.Size = new System.Drawing.Size(541, 556);
+            this.pboxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxArticulo.TabIndex = 1;
+            this.pboxArticulo.TabStop = false;
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(153, 38);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // FrmArticulos
             // 
@@ -590,6 +599,7 @@ namespace WinForm_App
         private Label lblDescCodigo;
         private Label lblDescDescripcion;
         private Label lblDescCateg;
+        private ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }
 
