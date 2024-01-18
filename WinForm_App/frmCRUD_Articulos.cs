@@ -141,9 +141,9 @@ namespace WinForm_App
 
         private void resetearColores()
         {
-            tbxCodigo.BackColor = System.Drawing.SystemColors.Window;
-            tbxNombre.BackColor = System.Drawing.SystemColors.Window;
-            tbxPrecio.BackColor = System.Drawing.SystemColors.Window;
+            tbxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
+            tbxNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
+            tbxPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(210)))), ((int)(((byte)(235)))));
         }
 
         private void cargarImagen(string imagen)
